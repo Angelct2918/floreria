@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Crear cuenta</h2>
+<form method="post">
+  <label>Nombre de usuario:</label>
+  <input type="text" name="nombre" required>
+  <label>Correo electrónico:</label>
+  <input type="email" name="correo" required>
+  <label>Contraseña:</label>
+  <input type="password" name="contrasena" required>
+  <label>Confirmar contraseña:</label>
+  <input type="password" name="confirma_contrasena" required>
+  <button class="button">Registrarse</button>
+</form>
+{% endblock %}

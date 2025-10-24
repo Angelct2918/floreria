@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Catálogo de flores</h2>
+<div class="catalogo">
+  {% for flor in catalogo %}
+    <div class="producto">
+      <img src="{{ flor.imagen or url_for('static', filename='img/no-image.png') }}" alt="{{ flor.nombre }}">
+      <h3>{{ flor.nombre }}</h3>
+      <p>{{ flor.descripcion }}</p>
+      <p class="precio">${{ flor.precio or 'Consultar' }}</p>
+    </div>
+  {% else %}
+    <p>No hay productos disponibles.</p>
+  {% endfor %}
+</div>
+{% endblock %}

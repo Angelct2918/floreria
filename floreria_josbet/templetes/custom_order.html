@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Pedido Personalizado</h2>
+<form method="post">
+  <label>Tipo de flor</label><input name="tipo_flor" required>
+  <label>Color</label><input name="color">
+  <label>Cantidad</label><input type="number" name="cantidad">
+  <label>Mensaje</label><textarea name="mensaje"></textarea>
+  <label>Extras</label><input name="extra">
+  <label>Teléfono</label><input name="telefono" required>
+  <button class="button">Enviar pedido</button>
+</form>
+{% endblock %}
