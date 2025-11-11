@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="formulario-contenedor">
+    <div class="formulario-caja">
+        <h2>🌺 Registro de Usuario 🌺</h2>
+        <p class="descripcion">Crea tu cuenta para descubrir las flores más hermosas y ofertas exclusivas.</p>
+        
+        <form method="POST" class="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="********" required>
+
+            <div class="botones">
+                <button type="submit" class="boton-principal">Registrarse</button>
+                <a href="{{ url_for('login') }}" class="boton-secundario">Iniciar Sesión</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

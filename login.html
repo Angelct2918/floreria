@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="formulario-contenedor">
+    <div class="formulario-caja">
+        <h2>🌷 Iniciar Sesión 🌷</h2>
+        <p class="descripcion">Bienvenido de nuevo. Ingresa tus datos para acceder a tu cuenta.</p>
+        
+        <form method="POST" class="formulario">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="********" required>
+
+            <div class="botones">
+                <button type="submit" class="boton-principal">Iniciar Sesión</button>
+                <a href="{{ url_for('register') }}" class="boton-secundario">Registrarse</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
