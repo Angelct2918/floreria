@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Panel de administración</h2>
+
+<h3>Usuarios</h3>
+<ul>
+  {% for u in usuarios %}
+    <li>{{ u.username }} - {{ u.email }} {% if u.is_admin %}(Admin){% endif %}</li>
+  {% endfor %}
+</ul>
+
+<h3>Productos</h3>
+<a href="{{ url_for('admin_new_product') }}" class="button">Agregar producto</a>
+<ul>
+  {% for p in productos %}
+    <li>{{ p.nombre }} - ${{ p.precio }}
+      <form method="post" action="{{ url_for('admin_delete_product', pid=p.id) }}" style="display:inline">
+        <button class="button danger">Eliminar</button>
+      </form>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
