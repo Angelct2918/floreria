@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pedido personalizado - Josbet</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="form-page">
+  <main class="center-card wide">
+    <h2>Pedido personalizado</h2>
+    <form id="pedidoForm">
+      <label>Tipo de flor
+        <input type="text" name="tipo" required>
+      </label>
+      <label>Color
+        <input type="text" name="color" required>
+      </label>
+      <label>Cantidad
+        <input type="number" name="cantidad" min="1" value="1" required>
+      </label>
+      <label>Mensaje
+        <textarea name="mensaje"></textarea>
+      </label>
+      <label>Peluches o carritos
+        <select name="extraKit">
+          <option value="ninguno">Ninguno</option>
+          <option value="peluche">Peluche</option>
+          <option value="carrito">Carrito</option>
+        </select>
+      </label>
+      <label>Extra (comentarios)
+        <input type="text" name="extra">
+      </label>
+      <div class="btn-row">
+        <button class="btn primary" type="submit">Enviar pedido</button>
+        <a class="btn" href="menu.html">Volver</a>
+      </div>
+    </form>
+    <div id="pedidoSummary" class="summary" aria-live="polite"></div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
