@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Josbet - Tienda{% endblock %}
+{% block body_class %} class="menu-page"{% endblock %}
+
+{% block content %}
+<header class="site-header">
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="{{ url_for('carrito') }}">Carrito</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="{{ url_for('pedido_personalizado') }}">Pedido personalizado</a></li>
+      <li><a href="{{ url_for('logout') }}">Salir</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero" class="hero">
+  <h1 class="brand">JOSBET FLORIST</h1>
+  <p class="subtitle">Hola, {{ session.nombre }}</p>
+</section>
+
+<section id="catalogo" class="section">
+  <h2>Nuestro Catálogo</h2>
+  <div class="cards">
+    {% for producto in productos %}
+    <div class="card">
+      {% if producto.imagen %}
+        <img src="{{ image_url(producto.imagen) }}" alt="{{ producto.nombre }}">
+      {% else %}
+        <div style="width:100%;max-width:160px;height:120px;background:#ddd;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+          Sin imagen
+        </div>
+      {% endif %}
+      <p><strong>{{ producto.nombre }}</strong></p>
+      <p class="small">{{ producto.descripcion }}</p>
+      <p style="color:#ff8fcf;font-weight:bold;">$ {{ "%.2f"|format(producto.precio) }}</p>
+      <form method="POST" action="{{ url_for('agregar_carrito', producto_id=producto.id) }}" style="width:100%;">
+        <input type="hidden" name="cantidad" value="1">
+        <button class="btn primary" type="submit" style="width:100%;">Agregar al carrito</button>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© Josbet Florist</p>
+</footer>
+{% endblock %}

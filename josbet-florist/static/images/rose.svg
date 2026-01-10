@@ -1,0 +1,11 @@
+<svg width="160" height="120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="120" fill="#fce4ec"/>
+  <circle cx="80" cy="50" r="15" fill="#c2185b"/>
+  <circle cx="70" cy="40" r="14" fill="#e91e63"/>
+  <circle cx="90" cy="40" r="14" fill="#e91e63"/>
+  <circle cx="65" cy="55" r="13" fill="#f06292"/>
+  <circle cx="95" cy="55" r="13" fill="#f06292"/>
+  <circle cx="80" cy="70" r="12" fill="#f48fb1"/>
+  <path d="M 80 70 Q 75 85 75 100" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <text x="80" y="110" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Rosa</text>
+</svg>

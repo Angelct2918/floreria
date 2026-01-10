@@ -1,0 +1,10 @@
+<svg width="160" height="120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="120" fill="#f3e5f5"/>
+  <ellipse cx="80" cy="40" rx="12" ry="20" fill="#e91e63"/>
+  <ellipse cx="70" cy="45" rx="12" ry="20" fill="#ec407a" transform="rotate(-25 70 45)"/>
+  <ellipse cx="90" cy="45" rx="12" ry="20" fill="#ec407a" transform="rotate(25 90 45)"/>
+  <ellipse cx="75" cy="60" rx="12" ry="20" fill="#f06292" transform="rotate(-15 75 60)"/>
+  <ellipse cx="85" cy="60" rx="12" ry="20" fill="#f06292" transform="rotate(15 85 60)"/>
+  <path d="M 80 70 Q 75 85 75 100" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <text x="80" y="110" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Tulipán</text>
+</svg>

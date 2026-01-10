@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Bienvenido - Florería Josbet{% endblock %}
+{% block body_class %} class="welcome-page"{% endblock %}
+
+{% block content %}
+<main class="center-card">
+  <h1>Bienvenido a la florería Josbet</h1>
+  <p>Encuentra flores eternas y arreglos personalizados.</p>
+  <div class="btn-row">
+    <a class="btn primary" href="{{ url_for('auth') }}">Explorar</a>
+  </div>
+</main>
+{% endblock %}

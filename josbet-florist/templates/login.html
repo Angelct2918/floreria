@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar sesión - Josbet{% endblock %}
+{% block body_class %} class="form-page"{% endblock %}
+
+{% block content %}
+<main class="center-card">
+  <h2>Iniciar sesión</h2>
+  <form method="POST">
+    <label>Correo
+      <input type="email" name="correo" required>
+    </label>
+    <label>Contraseña
+      <input type="password" name="contrasena" required>
+    </label>
+    <div class="btn-row">
+      <button class="btn primary" type="submit">Entrar</button>
+      <a class="btn" href="{{ url_for('register') }}">Crear cuenta</a>
+    </div>
+  </form>
+  <p class="small"><a href="{{ url_for('index') }}">Volver al inicio</a></p>
+</main>
+{% endblock %}

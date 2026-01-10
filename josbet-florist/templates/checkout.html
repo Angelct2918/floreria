@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - Josbet{% endblock %}
+{% block body_class %} class="form-page"{% endblock %}
+
+{% block content %}
+<main class="center-card wide">
+  <h2>Resumen de Compra</h2>
+  
+  {% if items %}
+    <table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+      <thead>
+        <tr style="border-bottom:2px solid #ff8fcf;">
+          <th style="text-align:left;padding:0.5rem;">Producto</th>
+          <th style="text-align:center;padding:0.5rem;">Cantidad</th>
+          <th style="text-align:right;padding:0.5rem;">Precio</th>
+          <th style="text-align:right;padding:0.5rem;">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr style="border-bottom:1px solid #ffd1e8;">
+          <td style="padding:0.5rem;">{{ item.nombre }}</td>
+          <td style="text-align:center;padding:0.5rem;">{{ item.cantidad }}</td>
+          <td style="text-align:right;padding:0.5rem;">${{ "%.2f"|format(item.precio) }}</td>
+          <td style="text-align:right;padding:0.5rem;">${{ "%.2f"|format(item.precio * item.cantidad) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+    <div style="background:#fff7fb;padding:1rem;border-radius:8px;margin:1rem 0;">
+      <h3 style="text-align:right;color:#ff8fcf;margin:0;">Total: ${{ "%.2f"|format(total) }}</h3>
+    </div>
+    
+    <form method="POST">
+      <div class="btn-row">
+        <a class="btn" href="{{ url_for('carrito') }}">Volver al carrito</a>
+        <button class="btn primary" type="submit">Confirmar compra</button>
+      </div>
+    </form>
+  {% else %}
+    <p style="text-align:center;color:#666;">No hay items para comprar</p>
+    <div class="btn-row">
+      <a class="btn primary" href="{{ url_for('menu') }}">Ver catálogo</a>
+    </div>
+  {% endif %}
+</main>
+{% endblock %}

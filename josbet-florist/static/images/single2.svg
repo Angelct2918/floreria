@@ -1,0 +1,10 @@
+<svg width="160" height="120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="120" fill="#fff9c4"/>
+  <circle cx="80" cy="50" r="12" fill="#ffb300"/>
+  <ellipse cx="70" cy="40" rx="8" ry="15" fill="#ff9800"/>
+  <ellipse cx="90" cy="40" rx="8" ry="15" fill="#ff9800"/>
+  <ellipse cx="60" cy="50" rx="8" ry="15" fill="#ffa726"/>
+  <ellipse cx="100" cy="50" rx="8" ry="15" fill="#ffa726"/>
+  <path d="M 80 70 Q 75 85 75 100" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <text x="80" y="110" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Flor 2</text>
+</svg>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Pedido personalizado - Josbet{% endblock %}
+{% block body_class %} class="form-page"{% endblock %}
+
+{% block content %}
+<main class="center-card wide">
+  <h2>Pedido personalizado</h2>
+  <form method="POST">
+    <label>Tipo de flor
+      <input type="text" name="tipo" required>
+    </label>
+    <label>Color
+      <input type="text" name="color" required>
+    </label>
+    <label>Cantidad
+      <input type="number" name="cantidad" min="1" value="1" required>
+    </label>
+    <label>Mensaje
+      <textarea name="mensaje"></textarea>
+    </label>
+    <label>Peluches o carritos
+      <select name="extraKit">
+        <option value="ninguno">Ninguno</option>
+        <option value="peluche">Peluche</option>
+        <option value="carrito">Carrito</option>
+      </select>
+    </label>
+    <label>Extra (comentarios)
+      <input type="text" name="extra">
+    </label>
+    <div class="btn-row">
+      <button class="btn primary" type="submit">Enviar pedido</button>
+      <a class="btn" href="{{ url_for('menu') }}">Volver</a>
+    </div>
+  </form>
+</main>
+{% endblock %}

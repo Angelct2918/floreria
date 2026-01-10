@@ -1,0 +1,63 @@
+:root{
+  --pink-100:#ffeef6;
+  --pink-200:#ffd1e8;
+  --pink-300:#ffb3db;
+  --accent:#ff8fcf;
+  --text:#4a3a3a;
+  --card:#fff7fb;
+}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text)}
+body{margin:0;background:var(--pink-100);}
+
+.center-card{max-width:520px;margin:10vh auto;padding:2rem;background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.06);text-align:center}
+.center-card.wide{max-width:900px}
+h1,h2{color:#6b3350;margin:0 0 1rem}
+p{margin:0.5rem 0}
+.btn-row{display:flex;gap:12px;justify-content:center;margin-top:1rem}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;background:transparent;border:2px solid var(--accent);color:var(--accent);text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+label{display:block;text-align:left;margin:0.6rem 0}
+input[type=text],input[type=email],input[type=password],input[type=number],select,textarea{width:100%;padding:0.6rem;border-radius:8px;border:1px solid #ffd9ee;background:#fff}
+textarea{min-height:100px}
+
+/* Fondos: bienvenida y vistas */
+.welcome-page{
+  min-height:100vh;
+  background-image: url('images/bg_welcome.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.menu-page, .auth-page, .form-page{
+  min-height:100vh;
+  background-image: url('images/bg_views.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.site-header{background:linear-gradient(90deg, rgba(255,255,255,0.85), rgba(255,240,246,0.6));backdrop-filter: blur(4px);padding:12px}
+.site-header nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;justify-content:center}
+.site-header nav a{color:var(--pink-300);text-decoration:none;font-weight:600}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;color:#4a2a3a}
+.brand{font-size:64px;letter-spacing:6px;color:rgba(80,30,52,0.9);margin:0}
+.subtitle{font-size:18px;margin-top:8px;color:#6b3350}
+.section{background:rgba(255,255,255,0.85);margin:20px auto;padding:18px;border-radius:10px;max-width:1100px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.card{display:flex;flex-direction:column;align-items:center;background:linear-gradient(180deg,var(--pink-200),#fff);padding:12px;border-radius:10px;min-width:160px;text-align:center}
+.card img{width:100%;max-width:160px;height:120px;object-fit:cover;border-radius:8px}
+.small{font-size:13px;color:#6b3f4e}
+.site-footer{padding:20px;text-align:center;color:#7a4b60}
+
+/* Imagen de exploración (reemplaza el botón) */
+.explore-link{display:inline-block}
+.explore-img{width:360px;max-width:90vw;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15);cursor:pointer;border:4px solid rgba(255,255,255,0.6);transition:transform .18s ease,box-shadow .18s ease}
+.explore-img:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.22)}
+
+@media(max-width:420px){.explore-img{width:260px}}
+
+/* Responsive */
+@media(max-width:720px){.brand{font-size:36px}.cards{flex-direction:column;align-items:center}.center-card{margin:6vh 16px}}

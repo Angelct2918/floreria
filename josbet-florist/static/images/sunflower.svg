@@ -1,0 +1,8 @@
+<svg width="160" height="120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="120" fill="#fff3e0"/>
+  <circle cx="80" cy="50" r="30" fill="#ff8c00"/>
+  <ellipse cx="80" cy="75" rx="20" ry="25" fill="#ffd700"/>
+  <circle cx="65" cy="35" r="8" fill="#ffeb3b"/>
+  <circle cx="95" cy="40" r="8" fill="#ffeb3b"/>
+  <text x="80" y="110" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Girasol</text>
+</svg>

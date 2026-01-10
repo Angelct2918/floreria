@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Pedidos - Josbet{% endblock %}
+{% block body_class %} class="form-page"{% endblock %}
+
+{% block content %}
+<main class="center-card wide">
+  <h2>Mis Pedidos</h2>
+  
+  {% if pedidos %}
+    <table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.9rem;">
+      <thead>
+        <tr style="border-bottom:2px solid #ff8fcf;">
+          <th style="text-align:left;padding:0.5rem;">ID</th>
+          <th style="text-align:left;padding:0.5rem;">Producto</th>
+          <th style="text-align:center;padding:0.5rem;">Cantidad</th>
+          <th style="text-align:right;padding:0.5rem;">Total</th>
+          <th style="text-align:center;padding:0.5rem;">Estado</th>
+          <th style="text-align:center;padding:0.5rem;">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pedido in pedidos %}
+        <tr style="border-bottom:1px solid #ffd1e8;">
+          <td style="padding:0.5rem;">#{{ pedido.id }}</td>
+          <td style="padding:0.5rem;">{{ pedido.tipo_flor or pedido.color or 'Pedido personalizado' }}</td>
+          <td style="text-align:center;padding:0.5rem;">{{ pedido.cantidad }}</td>
+          <td style="text-align:right;padding:0.5rem;">${{ "%.2f"|format(pedido.total or 0) }}</td>
+          <td style="text-align:center;padding:0.5rem;">
+            <span style="background:{% if pedido.estado == 'confirmado' %}#4CAF50{% elif pedido.estado == 'pendiente' %}#FF9800{% else %}#f44336{% endif %};color:white;padding:0.3rem 0.6rem;border-radius:4px;font-size:0.85rem;">
+              {{ pedido.estado }}
+            </span>
+          </td>
+          <td style="text-align:center;padding:0.5rem;font-size:0.85rem;">{{ pedido.fecha_pedido.strftime('%d/%m/%Y') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p style="text-align:center;color:#666;">Aún no tienes pedidos</p>
+  {% endif %}
+  
+  <div class="btn-row">
+    <a class="btn" href="{{ url_for('menu') }}">Volver al catálogo</a>
+    <a class="btn primary" href="{{ url_for('pedido_personalizado') }}">Hacer pedido personalizado</a>
+  </div>
+</main>
+{% endblock %}

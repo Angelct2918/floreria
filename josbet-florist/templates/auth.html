@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Acceso - Josbet{% endblock %}
+{% block body_class %} class="auth-page"{% endblock %}
+
+{% block content %}
+<main class="center-card">
+  <h2>Acceder a Josbet</h2>
+  <div class="btn-row">
+    <a class="btn" href="{{ url_for('login') }}">Iniciar sesión</a>
+    <a class="btn" href="{{ url_for('register') }}">Registrarse</a>
+  </div>
+  <p class="small">Volver al inicio <a href="{{ url_for('index') }}">Inicio</a></p>
+</main>
+{% endblock %}
